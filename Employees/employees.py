@@ -6,7 +6,7 @@ import seaborn as sns
 # Cargar los datos con cache
 @st.cache_data
 def cargar_datos(n_registros=500):
-    df = pd.read_csv("Employees.csv", nrows=n_registros)
+    df = pd.read_csv("Employees/Employees.csv", nrows=n_registros)
     return df
 
 employees = cargar_datos()
@@ -16,7 +16,7 @@ st.markdown("""
 Esta aplicación permite analizar datos de empleados mediante filtros, gráficos y estadísticas.
 """)
 
-st.sidebar.image('identificacion.png') 
+st.sidebar.image('Employees/identificacion.png') 
 st.sidebar.text("""Christian Rodrigo Porfirio Castro
 S21004519""")
 st.sidebar.markdown("______")
