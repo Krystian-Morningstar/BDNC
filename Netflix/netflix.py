@@ -4,9 +4,9 @@ import pandas as pd
 @st.cache_data
 def cargar_datos(n_filmes=1000):
     try:
-        df = pd.read_csv("movies.csv", encoding="utf-8", nrows=n_filmes)
+        df = pd.read_csv("Netflix/movies.csv", encoding="utf-8", nrows=n_filmes)
     except UnicodeDecodeError:
-        df = pd.read_csv("movies.csv", encoding="latin1", nrows=n_filmes)  # Alternativa en caso de error
+        df = pd.read_csv("Netflix/movies.csv", encoding="latin1", nrows=n_filmes)  # Alternativa en caso de error
     return df
 
 movies_df = cargar_datos()
@@ -14,7 +14,7 @@ movies_df = cargar_datos()
 st.title("Netflix Recommender System")
 st.write("Este es un sistema de recomendación de películas de Netflix.")
 
-st.sidebar.image('identificacion.png') 
+st.sidebar.image('Netflix/identificacion.png') 
 st.sidebar.text("""Christian Rodrigo Porfirio Castro
 S21004519""")
 
