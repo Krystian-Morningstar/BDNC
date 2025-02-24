@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 @st.cache_data
 def cargar_datos(n_registros=1000):
     try:
-        df = pd.read_csv("citibike.csv", encoding="utf-8", nrows=n_registros)
+        df = pd.read_csv("Bike/citibike.csv", encoding="utf-8", nrows=n_registros)
     except UnicodeDecodeError:
-        df = pd.read_csv("citibike.csv", encoding="latin1", nrows=n_registros)  # Alternativa en caso de error
+        df = pd.read_csv("Bike/citibike.csv", encoding="latin1", nrows=n_registros)  # Alternativa en caso de error
     
     df.rename(columns={"start_lat": "lat", "start_lng": "lon"}, inplace=True)
 
@@ -19,7 +19,7 @@ df = cargar_datos()
 
 st.title("Análisis de recorridos en bicicleta 🚲")
 
-st.sidebar.image('identificacion.png') 
+st.sidebar.image('Bike/identificacion.png') 
 st.sidebar.text("""Christian Rodrigo Porfirio Castro
 S21004519""")
 st.sidebar.markdown("______")
